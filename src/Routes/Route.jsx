@@ -8,6 +8,7 @@ import Root from '../Layout/Root';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import JobDetails from '../Pages/JobDetails/JobDetails';
+import AddJob from '../Pages/AddJob';
 
   const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ import JobDetails from '../Pages/JobDetails/JobDetails';
           path: '/job/:id',
           element: <JobDetails></JobDetails>,
           loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`)
+        },
+        {
+          path: "/add-job",
+          element: <AddJob></AddJob>
         }
       ]
     },
